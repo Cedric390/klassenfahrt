@@ -8,26 +8,20 @@
 public class Schueler
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    private String vorname;
+    private String name;
+    private Fahrt fahrt;
+    private Hotel hotel;
 
     /**
      * Konstruktor für Objekte der Klasse Schueler
      */
-    public Schueler()
+    public Schueler(String vorname, String name, Fahrt fahrt, Hotel hotel)
     {
-        // Instanzvariable initialisieren
-        x = 0;
+        this.vorname = vorname;
+        this.name = name;
+        this.fahrt = fahrt;
+        this.hotel = hotel;
     }
 
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
-    {
-        // tragen Sie hier den Code ein
-        return x + y;
-    }
 }

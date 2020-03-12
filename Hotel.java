@@ -7,27 +7,40 @@
  */
 public class Hotel
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    private int anzahl;
+    private int preis;
 
     /**
      * Konstruktor für Objekte der Klasse Hotel
      */
-    public Hotel()
+    public Hotel(int anzahl, int preis)
     {
-        // Instanzvariable initialisieren
-        x = 0;
+        this.anzahl = anzahl;
+        this.preis = preis;
     }
 
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
+    public int gibAnzahl()
     {
-        // tragen Sie hier den Code ein
-        return x + y;
+        return anzahl;
+    }
+    
+    public void setzeAnzahl(int anzahl)
+    {
+        this.anzahl = anzahl;
+    }
+    
+    public int gibPreis()
+    {
+        return preis;
+    }
+    
+    public void setzePreis(int preis)
+    {
+        this.preis = preis;
+    }
+    
+    public int gibGesamtpreis()
+    {
+        return anzahl * preis;
     }
 }

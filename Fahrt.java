@@ -7,27 +7,23 @@
  */
 public class Fahrt
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    private int preis;
 
     /**
      * Konstruktor für Objekte der Klasse Fahrt
      */
-    public Fahrt()
+    public Fahrt(int preis)
     {
-        // Instanzvariable initialisieren
-        x = 0;
+        this.preis = preis;
     }
 
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
+    public int gibPreis()
     {
-        // tragen Sie hier den Code ein
-        return x + y;
+        return preis;
+    }
+    
+    public void setzePreis(int preis)
+    {
+        this.preis = preis;
     }
 }

@@ -34,6 +34,7 @@ public class Schueler
     public void fensterErzeugen()
     {
         fenster = new JFrame("Klassenfahrt");
+        JLabel gesamtpreis = new JLabel();
         
         fenster.setLayout(new GridLayout(0, 1));
         fenster.add(new JLabel(name + ", " + vorname));
@@ -45,6 +46,7 @@ public class Schueler
             public void actionPerformed(ActionEvent e)
             {
                 fahrt.setzePreis(Integer.parseInt(fahrtpreis.getText()));
+                gesamtpreis.setText(Integer.toString(fahrt.gibPreis() + hotel.gibGesamtpreis()));
             }
         });
         fahrtPanel.add(fahrtpreis);
@@ -60,6 +62,7 @@ public class Schueler
             {
                 hotel.setzeAnzahl(hotel.gibAnzahl()-1);
                 tage.setText(Integer.toString(hotel.gibAnzahl()));
+                gesamtpreis.setText(Integer.toString(fahrt.gibPreis() + hotel.gibGesamtpreis()));
             }
         });
         hotelPanel.add(minus);
@@ -71,6 +74,7 @@ public class Schueler
             {
                 hotel.setzeAnzahl(hotel.gibAnzahl()+1);
                 tage.setText(Integer.toString(hotel.gibAnzahl()));
+                gesamtpreis.setText(Integer.toString(fahrt.gibPreis() + hotel.gibGesamtpreis()));
             }
         });
         hotelPanel.add(plus);
@@ -79,12 +83,20 @@ public class Schueler
             public void actionPerformed(ActionEvent e)
             {
                 hotel.setzePreis(Integer.parseInt(hotelpreis.getText()));
+                gesamtpreis.setText(Integer.toString(fahrt.gibPreis() + hotel.gibGesamtpreis()));
             }
         });
         hotelPanel.add(hotelpreis);
         hotelPanel.add(new JLabel("Euro"));
-        
+               
         fenster.add(hotelPanel);
+        
+        JPanel gesamtPanel = new JPanel(new FlowLayout());
+        gesamtPanel.add(new JLabel("Gesamtpreis:"));
+        gesamtpreis.setText(Integer.toString(fahrt.gibPreis() + hotel.gibGesamtpreis()));
+        gesamtPanel.add(new JLabel("Euro"));
+        gesamtPanel.add(gesamtpreis);
+        fenster.add(gesamtPanel);
         
         fenster.pack();
         fenster.setVisible(true);

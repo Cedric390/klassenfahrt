@@ -78,7 +78,7 @@ public class Schueler
         hotelpreis.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e)
             {
-                hotel.setzePreis(Integer.parseInt(fahrtpreis.getText()));
+                hotel.setzePreis(Integer.parseInt(hotelpreis.getText()));
             }
         });
         hotelPanel.add(hotelpreis);
